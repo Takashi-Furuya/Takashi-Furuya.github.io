@@ -1,56 +1,112 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Takashi Furuya"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+I am an Assistant Professor in the Faculty of Life and Medical Sciences at Doshisha University and a Visiting Scientist at the RIKEN Center for Advanced Intelligence Project.
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+My research interests lie at the intersection of applied mathematics and machine learning, with a particular focus on:
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+- Neural operators and operator learning
+- Transformers and in-context learning
+- Approximation theory for deep learning
+- Inverse problems for partial differential equations
+- Mathematical analysis of structure-preserving machine learning
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+## Education and Professional Experience
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+- **September 2025–present:** Visiting Scientist, RIKEN Center for Advanced Intelligence Project, Computational Physics Machine Learning Team, Japan
+- **April 2025–present:** Assistant Professor, Faculty of Life and Medical Sciences, Doshisha University, Japan
+- **August 2022–March 2025:** Assistant Professor, Education and Research Center for Mathematical and Data Science, Shimane University, Japan
+- **April 2021–July 2022:** JSPS Postdoctoral Fellow, Department of Mathematics, Hokkaido University, Japan
+- **2018–2021:** Ph.D. in Mathematics, Graduate School of Mathematics, Nagoya University
+- **2016–2018:** M.Sc. in Mathematics, Graduate School of Mathematics, Nagoya University
+- **2012–2016:** B.Sc. in Mathematics, College of Mathematics, University of Tsukuba
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+## Selected Publications
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+### Publications
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+1. T. Furuya, D. Murari, and C. B. Schönlieb,  
+   “Approximation Theory for Lipschitz Continuous Transformers,”  
+   *International Conference on Machine Learning (ICML)*, 2026.
 
-**Markdown generator**
+2. A. Kratsios, B. J. Kim, and T. Furuya,  
+   “Approximation Rates in Besov Norms and Sample-Complexity of Kolmogorov-Arnold Networks with Residual Connections,”  
+   *Neural Networks*, 200, 108797, 2026.
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+3. T. Furuya, P. Z. Kow, and J. N. Wang,  
+   “Consistency of the Bayes Method for the Inverse Scattering Problem with Randomly Truncated Sieve Priors,”  
+   *Inverse Problems and Imaging*, 21, 222–244, 2026.
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+4. D. Murari, T. Furuya, and C. B. Schönlieb,  
+   “Approximation Theory for 1-Lipschitz ResNets,”  
+   *Advances in Neural Information Processing Systems (NeurIPS)*, 38, 142888–142919, 2025.
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+5. T. Furuya, M. V. de Hoop, and G. Peyré,  
+   “Transformers Are Universal In-Context Learners,”  
+   *International Conference on Learning Representations (ICLR)*, 2025.
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+6. T. Furuya, S. Okuda, and K. Taniguchi,  
+   “Quantitative Approximation for Neural Operators in Nonlinear Parabolic Equations,”  
+   *International Conference on Learning Representations (ICLR)*, 2025.
+
+7. T. Furuya, M. Puthawala, M. Lassas, and M. V. de Hoop,  
+   “Can Neural Operators Always Be Continuously Discretized?”  
+   *Advances in Neural Information Processing Systems (NeurIPS)*, 37, 98936–98993, 2024.
+
+8. T. Furuya, M. Puthawala, M. Lassas, and M. V. de Hoop,  
+   “Globally Injective and Bijective Neural Operators,”  
+   *Advances in Neural Information Processing Systems (NeurIPS)*, 36, 57713–57753, 2023.
+
+9. T. Furuya and R. Potthast,  
+   “Inverse Medium Scattering Problems with Kalman Filter Techniques,”  
+   *Inverse Problems*, 38, 095003, 2022.
+
+10. T. Furuya,  
+    “The Direct and Inverse Scattering Problem for the Semilinear Schrödinger Equation,”  
+    *NoDEA Nonlinear Differential Equations and Applications*, 27, Article 24, 2020.
+
+### Preprints and Papers under Review
+
+1. T. Furuya, D. Mis, I. Dokmanić, M. V. de Hoop, and M. Lassas,  
+   “Function Graph Transformers Universally Approximate Operators Between Function Spaces,”  
+   arXiv:2605.17968, 2026.
+
+2. R. Barboni, T. Furuya, M. V. de Hoop, and G. Peyré,  
+   “Training Infinitely Deep and Wide Transformers,”  
+   arXiv:2605.17660, 2026.
+
+3. T. Furuya, Y. Korolev, and T. Yaguchi,  
+   “Approximation of Maximally Monotone Operators: A Graph Convergence Perspective,”  
+   arXiv:2605.12301, 2026.
+
+4. T. Furuya, R. Ozawa, and J. N. Wang,  
+   “Approximation Theory of Laplacian-Based Neural Operators for Reaction-Diffusion Systems,”  
+   arXiv:2605.12025, 2026.
+
+5. T. Furuya, A. Kratsios, D. Possamaï, and B. Raonić,  
+   “One Model to Solve Them All: 2BSDE Families via Neural Operators,”  
+   arXiv:2511.01125, 2025.
+
+## Competitive Research Funding
+
+- **Co-Investigator**, Royal Society ISPF International Collaboration Awards 2025,  
+  “Operator Learning for Gradient Flows with Applications in Imaging,”  
+  ICA/R2/252033, March 2026–March 2029.
+
+- **Principal Investigator**, JSPS KAKENHI Grant-in-Aid for Early-Career Scientists,  
+  24K16949, “A Study of Operator Learning for Inverse Problems in Partial Differential Equations,”  
+  April 2024–March 2027, JPY 3,900,000.
+
+- **Principal Investigator**, Sumitomo Foundation Grant for Basic Science Research 2023,  
+  “Approximate Solutions for Ill-Posed Inverse Problems of Partial Differential Equations Using Deep Learning,”  
+  December 2023–November 2024, JPY 1,000,000.
+
+- **Principal Investigator**, Yamanashi Prefectural Grant for Young Researchers,  
+  “Reconstruction Methods for Inverse Problems in Partial Differential Equations Using Deep Learning,”  
+  August 2022–March 2023, JPY 1,000,000.
