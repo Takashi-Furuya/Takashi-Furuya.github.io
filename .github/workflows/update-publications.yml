@@ -1,0 +1,42 @@
+name: Update publications from BibTeX
+
+on:
+  push:
+    paths:
+      - "_bibliography/publications.bib"
+      - "scripts/bibtex_to_publications.py"
+      - ".github/workflows/update-publications.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install BibTeX parser
+        run: pip install bibtexparser==1.4.1
+
+      - name: Generate Academic Pages publication files
+        run: python scripts/bibtex_to_publications.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _publications
+          if git diff --cached --quiet; then
+            echo "No publication changes."
+          else
+            git commit -m "Update publications from BibTeX"
+            git push
+          fi
