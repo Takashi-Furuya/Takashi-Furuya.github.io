@@ -140,10 +140,6 @@ urlcolor: blue
 
 {publications}
 
-# Talks and Presentations
-
-# {talks}
-
 # Funding and Fellowships
 
 {funding}
