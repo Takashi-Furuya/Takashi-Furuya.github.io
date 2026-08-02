@@ -15,7 +15,8 @@ My research interests lie at the intersection of applied mathematics and machine
 - Transformers and in-context learning
 - Approximation theory for deep learning
 - Inverse problems for partial differential equations
-- 
+
+
 ## Contact
 
 E-mail: [tfuruya@mail.doshisha.ac.jp](mailto:tfuruya@mail.doshisha.ac.jp)  
