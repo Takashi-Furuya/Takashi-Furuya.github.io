@@ -61,7 +61,7 @@ jobs:
         run: |
           rm -f cv_generated.md
 
-      - name: Commit generated PDF
+            - name: Commit generated PDF
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -72,5 +72,9 @@ jobs:
             echo "CV PDF has not changed."
           else
             git commit -m "Automatically update CV PDF"
-            git push
+
+            # Incorporate any changes pushed while this workflow was running
+            git pull --rebase origin master
+
+            git push origin master
           fi
