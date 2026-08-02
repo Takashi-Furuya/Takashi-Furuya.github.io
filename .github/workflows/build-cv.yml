@@ -1,0 +1,76 @@
+name: Build CV PDF
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "_pages/about.md"
+      - "_pages/publications.md"
+      - "_pages/funding.md"
+      - "_talks/**"
+      - "scripts/build_cv.py"
+      - ".github/workflows/build-cv.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python packages
+        run: |
+          pip install pyyaml
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            pandoc \
+            texlive-xetex \
+            texlive-latex-extra \
+            texlive-fonts-recommended
+
+      - name: Generate CV Markdown
+        run: |
+          python scripts/build_cv.py
+
+      - name: Create PDF
+        run: |
+          mkdir -p files
+
+          pandoc cv_generated.md \
+            -o files/CV_Takashi_Furuya.pdf \
+            --pdf-engine=xelatex \
+            -V mainfont="TeX Gyre Pagella" \
+            -V sansfont="TeX Gyre Heros"
+
+      - name: Remove temporary file
+        run: |
+          rm -f cv_generated.md
+
+      - name: Commit generated PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add files/CV_Takashi_Furuya.pdf
+
+          if git diff --cached --quiet; then
+            echo "CV PDF has not changed."
+          else
+            git commit -m "Automatically update CV PDF"
+            git push
+          fi
