@@ -1,34 +1,76 @@
-name: Cleanup bad PR
+name: Build CV PDF
 
 on:
-  pull_request_target:
-    types: [opened, reopened]
+  push:
+    branches:
+      - master
+    paths:
+      - "_pages/about.md"
+      - "_pages/publications.md"
+      - "_pages/funding.md"
+      - "_talks/**"
+      - "scripts/build_cv.py"
+      - ".github/workflows/build-cv.yml"
+
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  close-pr:
-    permissions:
-      pull-requests: write
+  build-cv:
     runs-on: ubuntu-latest
-    if: "contains(github.event.pull_request.body, 'by deleting this comment block') || github.event.pull_request.body == ''"
-    steps:
-      - uses: actions-ecosystem/action-add-labels@v1
-        with:
-          labels: |
-            invalidpr
-      - uses: superbrothers/close-pull-request@v3
-        with:
-          # Post a comment just before closing a pull request
-          comment: |
-            It looks like you are attempting to push a change to the [Academic Pages][1] template repository, for help with deploying your own website please [start a new thread in the discussions][2] or see the [GitHub Docs: About pull requests][3] if you need help.
 
-              [1]: https://github.com/academicpages/academicpages.github.io
-              [2]: https://github.com/academicpages/academicpages.github.io/discussions
-              [3]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
-      - uses: sudo-bot/action-pull-request-lock@v2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ github.event.pull_request.number }}
-          lock-reason: spam
+          python-version: "3.12"
+
+      - name: Install Python packages
+        run: |
+          pip install pyyaml
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            pandoc \
+            texlive-xetex \
+            texlive-latex-extra \
+            texlive-fonts-recommended
+
+      - name: Generate CV Markdown
+        run: |
+          python scripts/build_cv.py
+
+      - name: Create PDF
+        run: |
+          mkdir -p files
+          pandoc cv_generated.md \
+            -o files/CV_Takashi_Furuya.pdf \
+            --pdf-engine=xelatex \
+            -V mainfont="TeX Gyre Pagella" \
+            -V sansfont="TeX Gyre Heros"
+
+      - name: Remove temporary file
+        run: |
+          rm -f cv_generated.md
+
+      - name: Commit generated PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add files/CV_Takashi_Furuya.pdf
+
+          if git diff --cached --quiet; then
+            echo "CV PDF has not changed."
+          else
+            git commit -m "Automatically update CV PDF"
+            git pull --rebase origin master
+            git push origin master
+          fi
