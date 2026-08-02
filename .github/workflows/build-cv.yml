@@ -66,15 +66,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          cp files/CV_Takashi_Furuya.pdf /tmp/CV_Takashi_Furuya.pdf
+
+          git fetch origin master
+          git reset --hard origin/master
+
+          mkdir -p files
+          cp /tmp/CV_Takashi_Furuya.pdf files/CV_Takashi_Furuya.pdf
+
           git add files/CV_Takashi_Furuya.pdf
 
           if git diff --cached --quiet; then
             echo "CV PDF has not changed."
           else
             git commit -m "Automatically update CV PDF"
-
-            # Incorporate any changes pushed while this workflow was running
-            git pull --rebase origin master
-
             git push origin master
           fi
