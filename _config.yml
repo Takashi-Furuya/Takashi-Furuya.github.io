@@ -24,13 +24,13 @@ repository               : "Takashi-Furuya/Takashi-Furuya.github.io"
 author:
   # Biographic information
   avatar           : "takashi.jpg"
-  name             : "Takashi Furuya"
-  pronouns         : # example: "he/him"  
-  bio              : |
-    Assistant Professor, Doshisha University
+  # name             : "Takashi Furuya"
+  # pronouns         : # example: "he/him"  
+  # bio              : |
+  #  Assistant Professor, Doshisha University
 
-    E-mail (Doshisha): tfuruya@mail.doshisha.ac.jp
-    E-mail (Personal): takashi.furuya0101@gmail.com
+  #  E-mail (Doshisha): tfuruya@mail.doshisha.ac.jp
+  #  E-mail (Personal): takashi.furuya0101@gmail.com
   # location         : "Kyoto, Japan"
   # employer         : "Doshisha University"
   # uri              : # URL
