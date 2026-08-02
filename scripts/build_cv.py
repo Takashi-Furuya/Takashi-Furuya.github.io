@@ -63,57 +63,57 @@ funding = read_markdown(FUNDING)
 # Talks
 # ============================================================
 
-talk_entries = []
+# talk_entries = []
 
-if TALKS_DIR.exists():
-    for path in sorted(TALKS_DIR.glob("*.*"), reverse=True):
+# if TALKS_DIR.exists():
+#     for path in sorted(TALKS_DIR.glob("*.*"), reverse=True):
 
-        if path.suffix not in [".md", ".html"]:
-            continue
+#         if path.suffix not in [".md", ".html"]:
+#             continue
 
-        text = path.read_text(encoding="utf-8")
+#         text = path.read_text(encoding="utf-8")
 
-        match = re.match(
-            r"\A---\s*\n(.*?)\n---",
-            text,
-            flags=re.DOTALL,
-        )
+#         match = re.match(
+#             r"\A---\s*\n(.*?)\n---",
+#             text,
+#             flags=re.DOTALL,
+#         )
 
-        if not match:
-            continue
+#         if not match:
+#             continue
 
-        try:
-            data = yaml.safe_load(match.group(1))
-        except Exception:
-            continue
+#         try:
+#             data = yaml.safe_load(match.group(1))
+#         except Exception:
+#             continue
 
-        title = data.get("title", "")
-        event = data.get("event", data.get("venue", ""))
-        date = data.get("date", "")
-        location = data.get("location", "")
+#         title = data.get("title", "")
+#         event = data.get("event", data.get("venue", ""))
+#         date = data.get("date", "")
+#         location = data.get("location", "")
 
-        pieces = []
+#         pieces = []
 
-        if date:
-            pieces.append(str(date))
+#         if date:
+#             pieces.append(str(date))
 
-        if title:
-            pieces.append(f"**{title}**")
+#         if title:
+#             pieces.append(f"**{title}**")
 
-        if event:
-            pieces.append(str(event))
+#         if event:
+#             pieces.append(str(event))
 
-        if location:
-            pieces.append(str(location))
+#         if location:
+#             pieces.append(str(location))
 
-        if pieces:
-            talk_entries.append("- " + ". ".join(pieces))
+#         if pieces:
+#             talk_entries.append("- " + ". ".join(pieces))
 
 
-talks = "\n".join(talk_entries)
+# talks = "\n".join(talk_entries)
 
-if not talks:
-    talks = "_No talks found._"
+# if not talks:
+#     talks = "_No talks found._"
 
 
 # ============================================================
@@ -142,7 +142,7 @@ urlcolor: blue
 
 # Talks and Presentations
 
-{talks}
+# {talks}
 
 # Funding and Fellowships
 
