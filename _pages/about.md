@@ -9,12 +9,12 @@ redirect_from:
 
 I am an Assistant Professor in the Faculty of Life and Medical Sciences at Doshisha University and a Visiting Scientist at the RIKEN Center for Advanced Intelligence Project.
 
-My research interests lie at the intersection of applied mathematics and machine learning, with a particular focus on:
+My research interests lie at the intersection of mathematical analysis and machine learning, with a particular focus on:
 
-- Neural operators and operator learning
-- Transformers and in-context learning
-- Approximation theory for deep learning
+- Functional analysis
 - Inverse problems for partial differential equations
+- Operator learning
+- Approximation theory for deep learning
 
 
 ## Contact
@@ -23,7 +23,15 @@ E-mail: [tfuruya@mail.doshisha.ac.jp](mailto:tfuruya@mail.doshisha.ac.jp)
 Personal: [takashi.furuya0101@gmail.com](mailto:takashi.furuya0101@gmail.com)
 
 
-## Recent News
+## Open Position
+
+I am recruiting a postdoctoral researcher at Doshisha University for a joint project with Professor Yury Korolev at the University of Bath.
+
+**Application deadline: November 30, 2026, at 11:59 p.m. Japan Standard Time (JST).**
+
+- [View the full announcement in English](/postdoc-position-2027/)
+- [View the Japanese announcement on JREC-IN Portal](https://jrecin.jst.go.jp/seek/SeekJorDetail?id=D126090569)
+
 
 
 ## Education and Professional Experience
