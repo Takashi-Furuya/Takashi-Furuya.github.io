@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Takashi Furuya"
+title                    : "Takashi Furuya (古屋貴士)"
 title_separator          : "-"
 name                     : &name "Takashi Furuya"
 description              : &description "Takashi Furuya is an Assistant Professor at Doshisha University. Research in applied mathematics, machine learning, inverse problems, and partial differential equations."   # Update this with a general description of your site, this is the default if not overridden by a page
