@@ -14,6 +14,10 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: build-cv-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
